@@ -82,7 +82,7 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-COUNT = 300
+read 300
 FIRST_PORT=19000
 LAST_PORT=$(($FIRST_PORT + $COUNT))
 
