@@ -82,8 +82,10 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-COUNT = 300
-FIRST_PORT=19000
+echo "How many proxy do you want to create? Example 500"
+read COUNT
+
+FIRST_PORT=10000
 LAST_PORT=$(($FIRST_PORT + $COUNT))
 
 gen_data >$WORKDIR/data.txt
@@ -103,4 +105,3 @@ EOF
 bash /etc/rc.local
 
 gen_proxy_file_for_user
-
